@@ -1,0 +1,60 @@
+<% layout("/layouts/boilerplate") %>
+    <div class="container form-page-wrapper">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-xl-7">
+                <div class="form-card">
+                    <h2>Create a New Listing</h2>
+                    <p class="form-subtitle">Fill in the details below to list your property on WanderLust.</p>
+
+                    <form method="post" action="/listings" novalidate class="needs-validation">
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Title</label>
+                            <input type="text" id="title" name="listing[title]" placeholder="e.g. Cozy Mountain Cabin" class="form-control" required>
+                            <div class="valid-feedback">Title Looks Good.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Description</label>
+                            <textarea id="description" name="listing[description]" placeholder="Tell guests what makes this place special..." class="form-control" required></textarea>
+                            <div class="invalid-feedback">Please Enter a Correct Description.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="image" class="form-label">Image URL</label>
+                            <input type="text" id="image" name="listing[image][url]" placeholder="Paste an image link (optional)" class="form-control">
+                        </div>
+
+                        <div class="row">
+                            <div class="mb-3 col-md-4">
+                                <label for="price" class="form-label">Price</label>
+                                <div class="input-group">
+                                    <span class="input-group-prefix">&#8377;</span>
+                                    <input type="number" id="price" name="listing[price]" placeholder="999" min="0" class="form-control" required>
+                                    <div class="invalid-feedback">Please Enter a Valid Amount.</div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3 col-md-8">
+                                <label for="country" class="form-label">Country</label>
+                                <input type="text" id="country" name="listing[country]" placeholder="e.g. India" class="form-control" required>
+                                <div class="invalid-feedback">Please Enter a Valid Country.</div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="location" class="form-label">Location</label>
+                            <input type="text" id="location" name="listing[location]" placeholder="e.g. Manali, Himachal Pradesh" class="form-control" required>
+                            <div class="invalid-feedback">Please Enter a Valid Location.</div>
+                        </div>
+
+                        <div class="form-actions">
+                            <a href="/listings" class="btn-outline-custom text-center">Cancel</a>
+                            <button type="submit" class="btn">
+                                <i class="fa-solid fa-plus me-1"></i> Add Listing
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
